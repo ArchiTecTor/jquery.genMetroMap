@@ -1,0 +1,227 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script src="jquery-current.js"></script>
+    <script src="jquery.metro.js"></script>
+    <script>
+        window.onload=function(){
+            $('#metro').genMetroMap({
+                mapUrl:'metro.gif',
+                onSelect:function(){
+                    
+                    this.button.animate({opacity:1},500);
+                },
+                onDeselect:function(){
+                    
+                    this.button.animate({opacity:0.5},500);
+                },
+                onInit:function(){
+                    
+                    $(this).find('button, img').css({opacity:0.5});
+                }
+            });
+            
+            
+        };
+        
+    </script>
+    <style>
+        @import url(metro.css);
+
+    </style>
+    </head>
+    <body>
+        <select multiple="multiple" id="metro">
+            <optgroup label="Сокольническая линия" style="color:red">
+<option id="1" x="488" y="59">Улица Подбельского</option>
+
+<option id="2" x="488" y="70">Черкизовская</option>
+
+<option id="3" x="488" y="78">Преображенская площадь</option>
+
+<option id="4" x="488" y="89">Сокольники</option>
+
+<option id="5" x="488" y="99">Красносельская</option>
+
+<option id="6" x="381" y="254">Комсомольская</option>
+
+<option id="7" x="370" y="272">Красные ворота</option>
+
+<option id="8" x="351" y="290">Чистые пруды</option>
+
+<option id="9" x="323" y="319">Лубянка</option>
+
+<option id="10" x="288" y="354">Охотный ряд</option>
+
+<option id="11" x="234" y="408">Библиотека им. Ленина</option>
+
+<option id="12" x="208" y="434">Кропоткинская</option>
+
+<option id="13" x="198" y="450">Парк Культуры</option>
+
+<option id="14" x="86" y="604">Фрунзенская</option>
+
+<option id="15" x="86" y="614">Спортивная</option>
+
+<option id="16" x="86" y="624">Воробьевы горы</option>
+
+<option id="17" x="86" y="633">Университет</option>
+
+<option id="18" x="86" y="644">Проспект Вернадского</option>
+
+<option id="19" x="86" y="658">Юго-западная</option>
+
+</optgroup>
+<optgroup label="Люблинская линия" style="color:#71C725">
+<option id="20" x="400" y="669">Зябликово</option>
+
+<option id="21" x="406" y="654">Шипиловская</option>
+
+<option id="22" x="406" y="643">Борисово</option>
+
+<option id="23" x="406" y="633">Марьино</option>
+
+<option id="24" x="406" y="624">Братискавская</option>
+
+<option id="25" x="406" y="614">Люблино</option>
+
+<option id="26" x="406" y="603">Волжская</option>
+
+<option id="27" x="406" y="593">Печатники</option>
+
+<option id="28" x="406" y="584">Кожуховская</option>
+
+<option id="29" x="406" y="574">Дубровка</option>
+
+<option id="30" x="455" y="438">Крестьянская застава</option>
+
+<option id="31" x="454" y="372">Римская</option>
+
+<option id="32" x="422" y="327">Чкаловская</option>
+
+<option id="33" x="361" y="295">Сретенскай бульвар</option>
+
+<option id="34" x="295" y="242">Трубная</option>
+
+</optgroup>
+<optgroup label="Замоскворецкая линия" style="color:#055014">
+<option id="35" x="190" y="59">Речной вокзал</option>
+
+<option id="36" x="190" y="69">Водный стадион</option>
+
+<option id="37" x="190" y="78">Войковская</option>
+
+<option id="38" x="190" y="89">Сокол</option>
+
+<option id="39" x="190" y="99">Аэропорт</option>
+
+<option id="40" x="190" y="110">Динамо</option>
+
+<option id="41" x="219" y="231">Белорусская</option>
+
+<option id="42" x="228" y="264">Маяковская</option>
+
+<option id="43" x="228" y="291">Тверская</option>
+
+<option id="44" x="297" y="364">Театральная</option>
+
+<option id="45" x="332" y="397">Новокузнецкая</option>
+
+<option id="46" x="386" y="455">Павелецкая</option>
+
+<option id="47" x="388" y="489">Автозаводская</option>
+
+<option id="48" x="389" y="500">Коломенская</option>
+
+<option id="49" x="392" y="511">Каширская</option>
+
+<option id="50" x="388" y="622">Кантемировская</option>
+
+<option id="51" x="389" y="633">Царицыно</option>
+
+<option id="52" x="389" y="643">Орехово</option>
+
+<option id="53" x="389" y="654">Домодедовская</option>
+
+<option id="54" x="388" y="670">Красногвардейская</option>
+
+</optgroup>
+<optgroup label="Каховская линия" style="color:#1A9D8E">
+<option id="55" x="384" y="511">Каширская</option>
+
+<option id="56" x="363" y="537">Варшавская</option>
+
+<option id="57" x="301" y="593">Каховская</option>
+
+</optgroup>
+<optgroup label="Таганско-краснопресненская линия" style="color:#780060">
+<option id="58" x="489" y="663">Выхино</option>
+
+<option id="59" x="489" y="654">Рязаский проспект</option>
+
+<option id="60" x="489" y="644">Кузьминки</option>
+
+<option id="61" x="489" y="633">Текстильщики</option>
+
+<option id="63" x="488" y="624">Волгоградский проспект</option>
+
+<option id="64" x="455" y="449">Пролетарская</option>
+
+<option id="65" x="413" y="409">Таганская</option>
+
+<option id="66" x="356" y="350">Китай-город</option>
+
+<option id="67" x="316" y="310">Кузнецкий мост</option>
+
+<option id="68" x="222" y="302">Пушкинская</option>
+
+<option id="69" x="178" y="258">Баррикадная</option>
+
+<option id="70" x="175" y="207">Улица 1905 года</option>
+
+<option id="71" x="175" y="198">Беговая</option>
+
+<option id="72" x="175" y="187">Полежаевская</option>
+
+<option id="73" x="175" y="177">Октябрьское полу</option>
+
+<option id="74" x="175" y="168">Щукинская</option>
+
+<option id="75" x="175" y="158">Тушинская</option>
+
+<option id="76" x="175" y="147">Сходненская</option>
+
+<option id="77" x="175" y="137">Планерная</option>
+
+</optgroup>
+<optgroup label="Кольцевая линий" style="color:#640000">
+<option id="78" x="355" y="235">Проспект мира</option>
+
+<option id="79" x="388" y="260">Комсомольская</option>
+
+<option id="80" x="417" y="312">Курская</option>
+
+<option id="81" x="408" y="401">Таганская</option>
+
+<option id="83" x="381" y="446">Павелецкая</option>
+
+<option id="84" x="289" y="485">Добрынинская</option>
+
+<option id="85" x="236" y="472">Октябрьская</option>
+
+<option id="86" x="192" y="442">Парк культуры</option>
+
+<option id="87" x="158" y="374">Киевская</option>
+
+<option id="90" x="186" y="266">Краснопресненская</option>
+
+<option id="91" x="224" y="239">Белорусская</option>
+
+<option id="92" x="264" y="222">Новослободская</option>
+
+</optgroup>
+</select>
+    </body>
+    
+</html>
