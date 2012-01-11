@@ -62,6 +62,7 @@
             onSelect: $.noop,
             onDeselect: $.noop,
             onInit: $.noop,
+            showSelect: false,
             mapUrl: null
             
         },options);
@@ -75,28 +76,34 @@
             // соответственно для его содержимого и создаем карту
             
             var select_list=$(this);
-            var position=select_list.offset();
+            select_list.attr({multiple:'multiple'});
+            if(!options.showSelect){
+                select_list.hide();
+            }
             
-            var widget=$('<span>').addClass('metro-widget')
-                .appendTo($(this).parent())
-                .css({
+            var widget=$('<div>').addClass('metro-widget')
+                
+                .appendTo($(this).parent());
+            var container=$('<div>').css({padding:0})
+                .addClass('metro-map')
+                .appendTo(widget);
+            
+            /*    
+            select_list.on('focusin',function(){
+                widget.fadeIn(500);
+            })*/
+            select_list.on('change',function(){
+                //беда с обработкой каждого option в select
+                //пришлось при каждом изменении списка синхронить с кнопками
+                
+                /*var position=select_list.offset();
+                widget.css({
                     position: 'absolute',
                     left: position.left+select_list.width(),
                     top: position.top,
-                    
+                    zIndex: 101
                 })
-                .hide();
-            var container=$('<span>').css({padding:0})
-                .addClass('metro-map')
-                .appendTo(widget);
-                
-            select_list.on('focusin',function(){
-                widget.fadeIn(500);
-            })
-            .on('change',function(){
-                //беда с обработкой каждого option в select
-                //пришлось при каждом изменении списка синхронить с кнопками
-                widget.fadeIn(500);
+                .fadeIn(500);*/
                 select_list.find('option').each(function(){
                     //this указывает на option
                     var elem=$(this);
@@ -117,13 +124,13 @@
                 });
             });
             
-            widget.hover(function(){
+            /*widget.hover(function(){
                 widget.fadeIn(500);
             },
             function(){
                 widget.fadeOut(500);
             }
-            );
+            );*/
             
             $('<img>').attr({src:options.mapUrl}).appendTo(container);
             $(this).find('optgroup').each(function(){
@@ -138,11 +145,12 @@
                         position:'absolute',
                         backgroundColor:color,
                         left:option.attr('x')+'px',
-                        top:option.attr('y')+'px',
+                        top:option.attr('y')+'px'
                     })
                     .attr('title',option.text())
-                    .on('click',function(){
+                    .on('click',function(event){
                         toggle(html_option,button,options,true);
+                        event.preventDefault();
                     })
                     
                     .addClass('metro-station')

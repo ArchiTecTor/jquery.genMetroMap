@@ -1,10 +1,24 @@
+#search_metro{
+    
+    float: left;
+    height: 800px;
+    background-color: #fff;
+}
+
+.metro-map{
+    margin: 10px;
+    position: relative;
+}
+
 .metro-widget{
     border: 2px solid #000;
     border-radius: 10px;
     margin-left: 20px;
     background-color: #fff;
-    overflow: scroll;
-    height: 300px;
+    overflow-y: auto;
+    height: 100%;
+    float: left;
+    
 }
 .metro-station{
     border: 1px solid #fff;
@@ -30,4 +44,20 @@
     width: 12px;
     height: 12px;
     background-color: #FF00C2;
+    
+    
+}
+
+#metro_search_select{
+   border:1px solid #666;
+    -moz-box-shadow:0 0 90px 5px #000;
+    -webkit-box-shadow: 0 0 90px #000;
+    z-index:10000;
+    background-color:#333;
+    border-radius: 15px;
+    text-align: center;
+    padding: 10px;
+    max-width: 1000px;
+    color: white;
+    font-size: 1.3em;
 }
